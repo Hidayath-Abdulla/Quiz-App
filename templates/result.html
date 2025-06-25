@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Finished!</h1>
+        <p>Hello {{ username }},</p>
+        <p>Your final score is: <strong>{{ score }}/{{ total }}</strong></p>
+        {% if score == total %}
+            <p>Excellent, you got all answers right!</p>
+        {% elif score >= total // 2 %}
+            <p>Good Job, Keep Learning!</p>
+        {% else %}
+            <p>Practice more! Better luck next time!</p>
+        {% endif %}
+        <a href="/restart">Restart Quiz</a>
+    </div>
+</body>
+</html>

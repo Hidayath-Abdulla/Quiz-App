@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Question {{ qn }}/{{ total }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Question {{ qn }} of {{ total }}</h2>
+        <form method="post">
+            <p>{{ q.que }}</p>
+            {% for opt in q.ans %}
+                <label><input type="radio" name="answer" value="{{ opt }}" required> {{ opt }}</label><br>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
